@@ -1,7 +1,7 @@
 <?php
 
     function getSchedule($year,$month){
-        $regular = [];
+        $regular = [5,10,15,20,25,30];
         if($month == 12){
             $making = [23,24,25];
         }
