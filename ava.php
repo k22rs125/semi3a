@@ -1,18 +1,19 @@
 <?php
 
-    function getSchedule($year,$month){
-        $regular = [5,10,15,20,25,30];
-        if($month == 12){
-            $making = [23,24,25];
+    function getSchedule($year){
+        if($year == 2024){
+            $regular = [5,10,15,20,25,30];
+        }else if($year == 2025){
+            $regular = [4,8,12,16,20,24,28];
         }
-    }
-
-    function getReserve($year,$month){
+        return $regular;
         
     }
 
-    function Available($year,$month){
+    function getReserve($year,$month){
+        if($year == 2024 && $month == 1){
+            $reserve = [2,5,10];
+        }
 
+        return $reserve;
     }
-
-?>
