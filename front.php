@@ -43,16 +43,17 @@ $wday = date('w',$timestamp);
 $wdays = array("日", "月", "火", "水", "木", "金", "土");
 $w = $wday;
 
-
+$schedule = getSchedule($year, $month);
+$reserve = getReserve($year, $month);
 
 for($i = 1; $i <= $days; $i++){
-    if(in_array($i,getSchedule($year))){
+    if(in_array($i,$schedule)){
         $r = "休業日";
     }else{
         $r = "〇";
     }
 
-    if(in_array($i,getReserve($year,$month))){
+    if(in_array($i, $reserve)){
         $r = "予約済み";
     }
 
