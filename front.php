@@ -6,7 +6,7 @@ if (isset($_POST['search'])) {
     $month = $_POST['month'];
 }else{
     $year = date('Y');
-    $month = date('m');
+    $month = date('n');
 }
 
 echo "<h2>空き状況状態検索</h2>";
@@ -47,10 +47,10 @@ $schedule = getSchedule($year, $month);
 $reserve = getReserve($year, $month);
 
 for($i = 1; $i <= $days; $i++){
+    $r = "〇";
+
     if(in_array($i,$schedule)){
         $r = "休業日";
-    }else{
-        $r = "〇";
     }
 
     if(in_array($i, $reserve)){
